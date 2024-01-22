@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  code-server:
+    container_name: code-server
+    image: code-server
+    restart: unless-stopped
+    ports:
+      - "8455:8455"
+    volumes:
+      - /mnt/cache/appdata/code-server:/home/code/
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    
+
