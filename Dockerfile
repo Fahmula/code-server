@@ -1,5 +1,5 @@
-# Use Ubuntu 22.04 as the base image
-FROM ubuntu:22.04
+# Use Ubuntu 24.04 as the base image
+FROM ubuntu:24.04
 
 # Set non-interactive frontend
 ENV DEBIAN_FRONTEND=noninteractive 
@@ -12,10 +12,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     wget \
     ssh \
-    # Add deadsnakes PPA for Python 3.12
-    && add-apt-repository ppa:deadsnakes/ppa \
-    && apt-get update \
-    && apt-get install -y python3.12 \
+    python3.12 \
     # Clean up
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
