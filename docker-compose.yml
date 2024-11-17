@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
   code-server:
     container_name: code-server
-    image: code-server
+    image: ghcr.io/fahmula/code-server:latest
     restart: unless-stopped
     ports:
       - "8455:8455"
